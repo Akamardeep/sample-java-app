@@ -35,6 +35,7 @@ jobs:
       run: |
         # Copy the WAR file to the directory where IIS is configured for Java Servlet applications
         dir
+        ls 
         
     - name: Restart IIS
       run: |
