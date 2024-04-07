@@ -29,11 +29,13 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean package
+      
 
     - name: Copy WAR file to IIS directory
       run: |
         # Copy the WAR file to the directory where IIS is configured for Java Servlet applications
-
+        dir
+        
     - name: Restart IIS
       run: |
         # Restart IIS to apply changes
