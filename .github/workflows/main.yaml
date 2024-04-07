@@ -33,6 +33,7 @@ jobs:
 
     - name: Copy WAR file to IIS directory
       run: |
+        cd target
         # Copy the WAR file to the directory where IIS is configured for Java Servlet applications
         dir
         ls 
