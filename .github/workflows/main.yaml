@@ -37,6 +37,8 @@ jobs:
         # Copy the WAR file to the directory where IIS is configured for Java Servlet applications
         dir
         ls 
+        java -jar sample-0.0.1-SNAPSHOT.jar
+        
         
     - name: Restart IIS
       run: |
