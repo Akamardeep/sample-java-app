@@ -13,26 +13,12 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Setup JDKd
+    - name: Set up JDK and Maven
       uses: actions/setup-java@v2
       with:
-           java-version: '11'
-           distribution: 'adopt'
-           java-package: 'jdk'
-           architecture: 'x64'
-           check-latest: false
-           server-id: 'github'
-           server-username: ${{ github.actor }}
-           server-password: ${{ secrets.GITHUB_TOKEN }}
-           overwrite-settings: true
-           job-status: 'success'
-           
-    - name: Set up Maven
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'maven'
+        distribution: 'adopt'
         java-version: '11'
-        
+        maven-version: 'default'
     - name: Build with Maven
       run: mvn clean package
       
