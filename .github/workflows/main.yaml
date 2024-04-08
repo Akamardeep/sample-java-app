@@ -7,7 +7,7 @@ on:
     branches: [dev]
 jobs:
    deploy:
-    runs-on: windows-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout Repository
@@ -38,6 +38,11 @@ jobs:
         dir
         ls 
         java -jar sample-0.0.1-SNAPSHOT.jar
+         # Remove-Item -Path "C:\testdemo" -Recurse -Force 
+            Get-ChildItem -Path "C:\testdemo" | Remove-Item -Recurse -Force
+            Copy-Item -Path "dist/achieve-ui/browser/*" -Destination "C:/testdemo" -Recurse -Force
+            Copy-Item -Path "dist/achieve-ui/3rdpartylicenses.txt" -Destination "C:/testdemo" -Force
+
         
         
     - name: Restart IIS
