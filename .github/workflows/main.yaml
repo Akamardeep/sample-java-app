@@ -26,7 +26,13 @@ jobs:
            server-password: ${{ secrets.GITHUB_TOKEN }}
            overwrite-settings: true
            job-status: 'success'
-
+           
+    - name: Set up Maven
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'maven'
+        java-version: '11'
+        
     - name: Build with Maven
       run: mvn clean package
       
