@@ -13,7 +13,7 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Setup JDK
+    - name: Setup JDKd
       uses: actions/setup-java@v2
       with:
            java-version: '11'
